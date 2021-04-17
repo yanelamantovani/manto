@@ -1,0 +1,88 @@
+.bebas {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+.sacramento {
+    font-family: 'Sacramento', cursive;
+    color: #FFCC00;
+}
+
+body {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    background-color: #272727;
+    color: #FFFFFF;
+    padding: 0 2%;
+}
+
+html, body, .header { 
+    height : 100%; 
+}
+
+.header ul {
+    padding-left: 0;
+}
+
+.header li {
+    list-style: none;
+    font-size: 2em;
+    margin: 1em 0;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 0;
+}
+
+.header h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.content {
+    width: 80%;
+}
+
+.alfajores {
+    background-image: url("../images/alfajores.jpg");
+    background-repeat: no-repeat;
+    height: 567px;
+    background-color: royalblue;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+  
+.fa:hover, .header li:hover {
+    opacity: 0.7;
+}
+
+.redes {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.redes a {
+    background: transparent;
+    color: #FFCC00;
+}
