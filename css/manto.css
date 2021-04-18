@@ -27,7 +27,7 @@ body {
     padding: 0 2%;
 }
 
-html, body, .header { 
+html, body, .header, .content { 
     height : 100%; 
 }
 
@@ -46,6 +46,10 @@ a {
     color: #FFFFFF;
 }
 
+.highlighted {
+    color: #FFCC00;
+}
+
 .header h1 {
     text-align: center;
     font-size: 4em;
@@ -59,13 +63,11 @@ a {
 
 .content {
     width: 80%;
-    background-color: #454545;
-}
-
-.alfajores {
-    background-image: url("../images/alfajores.jpg");
-    background-repeat: no-repeat;
-    height: 567px; 
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa {
@@ -91,3 +93,40 @@ a {
     background: transparent;
     color: #FFCC00;
 }
+
+.content table {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.content table td, .content table th {
+    padding: 1em 2em;
+    border: #FFCC00 3px solid;
+}
+
+.content table {
+    border-collapse: collapse;
+}
+
+.rounded {
+    border-radius: 25px;
+    background-color: #272727;
+    color: #FFFFFF;
+    padding: 3em;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.content table .top-left-empty {
+    border-top: 0;
+    border-left: 0;
+}
+
+.content table .bot-right-empty {
+    border-bottom: 0;
+    border-right: 0;
+}
+
+
