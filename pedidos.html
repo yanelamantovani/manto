@@ -13,6 +13,7 @@
 <body>
     <!-- Barra Lateral -->
     <div class="header">
+        <img src="images/logo.jpg" alt="Logo">
         <!-- Logo -->
         <div>
             <h1 class="bebas">Manto</h1>
@@ -33,14 +34,78 @@
     </div>
     <!-- Contenido -->    
     <div class="content">
-        <h1>Pedidos</h1>
-        <form action="">
-            <div><label for="">Alfajores</label><input type="text"></div>
-            <div><label for="">Conitos</label><input type="text"></div>
-            <div><label for="">Cajas</label><input type="text"></div>
-        </form>
-
-
+        <div class="rounded form">
+            <form id="captcha-form" action="pedidos.html" method="post">
+                <div class="info">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input id="nombre" type="text" /> <!-- AGREGAR ATRIBUTOS NAME A CADA INPUT-->
+                        <label class="center" for="apellido">Apellido:</label>
+                        <input type="text" />
+                    </div>
+                    <div>
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="address" />
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" />
+                        <label class="center" for="telefono">Teléfono:</label>
+                        <input type="tel" />
+                    </div>
+                    <div class="delivery">
+                        <label for="entrega">Retiro en tienda</label>
+                        <input type="radio" name="entrega" />
+                        <label class="center" for="entrega">Envío a domicilio</label>
+                        <input type="radio" name="entrega" />
+                    </div>
+                </div>
+                <div class="amounts">
+                    <div>
+                        <label for="productos">Alfajor de dulce de leche bañado en chocolate</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de dulce de leche bañado en chocolate blanco</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de fruta bañado en chocolate</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de fruta bañado en chocolate blanco</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de dulce de leche bañado en chocolate 70% cacao</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de almendras bañado en chocolate</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Alfajor de nueces bañado en chocolate blanco</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="productos">Conito de dulce de leche bañado en chocolate</label>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="comments">
+                    <label for="aclaraciones">No soy un robot</label>
+                    <span id="captcha-txt" class="captcha"></span>
+                    <input id="captcha" name="captcha" type="text"/>
+                    <span id="captcha-msg" class="captcha-msg"></span>
+                </div>
+                <div>
+                    <button id="submit-btn" type="button">Enviar</button>
+                </div> 
+            </form>
+        </div>
     </div>
+    <script type="text/javascript" src="js/pedidos.js"></script>
 </body>
 </html>
