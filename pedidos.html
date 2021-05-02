@@ -13,19 +13,19 @@
 <body>
     <!-- Barra Lateral -->
     <div class="header">
-        <!-- Logo -->
-        <img src="images/logo.jpg" alt="Logo">
         <div>
+            <!-- Logo -->
+            <img src="images/logo.jpg" alt="Logo">
             <!-- Título -->
             <h1>Manto</h1>
             <h2>de Saladillo a tu boca</h2>
-            <!-- Menu -->
+             <!-- Menu -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a class="highlighted" href="pedidos.html">Pedidos</a></li>
             </ul>
-        </div>    
+        </div>   
         <!-- Redes -->
         <ul class="social">
             <li><a href="https://www.facebook.com/desaladilloatuboca/" class="fa fa-facebook" title="Facebook" target="_blank"></a></li>
@@ -36,7 +36,7 @@
     <!-- Contenido -->    
     <div class="content">
         <div class="rounded">
-            <form id="captcha-form" action="pedidos.html" method="post">
+            <form id="form" action="pedidos.html" method="post">
                 <div class="info">
                     <label for="nombre">Nombre:</label>
                     <input id="nombre" type="text" name="nombre" />
@@ -94,7 +94,7 @@
                 <div class="captcha">
                     <label for="captcha">No soy un robot</label>
                     <span id="captcha-txt" class="captcha-txt"></span>
-                    <input id="captcha" type="text" name="captcha" />
+                    <input id="captcha-inp" type="text" name="captcha" />
                     <span id="captcha-msg"></span>
                 </div>
                 <div>
