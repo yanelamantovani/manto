@@ -13,13 +13,14 @@
 <body>
     <!-- Barra Lateral -->
     <div class="header">
-        <img src="images/logo.jpg" alt="Logo">
         <!-- Logo -->
+        <img src="images/logo.jpg" alt="Logo">
         <div>
-            <h1 class="bebas">Manto</h1>
-            <h2 class="sacramento">de Saladillo a tu boca</h2>
+            <!-- Título -->
+            <h1>Manto</h1>
+            <h2>de Saladillo a tu boca</h2>
             <!-- Menu -->
-            <ul class="bebas">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a class="highlighted" href="pedidos.html">Pedidos</a></li>
@@ -34,24 +35,24 @@
     </div>
     <!-- Contenido -->    
     <div class="content">
-        <div class="rounded form">
+        <div class="rounded">
             <form id="captcha-form" action="pedidos.html" method="post">
                 <div class="info">
                     <div>
                         <label for="nombre">Nombre:</label>
-                        <input id="nombre" type="text" /> <!-- AGREGAR ATRIBUTOS NAME A CADA INPUT-->
-                        <label class="center" for="apellido">Apellido:</label>
+                        <input id="nombre" type="text" name="nombre" />
+                        <label class="center" for="apellido" name="apellido">Apellido:</label>
                         <input type="text" />
                     </div>
                     <div>
                         <label for="direccion">Dirección:</label>
-                        <input type="text" class="address" />
+                        <input type="text" class="address" name="direccion"/>
                     </div>
                     <div>
                         <label for="email">Email:</label>
-                        <input type="email" />
+                        <input type="email" name="email"/>
                         <label class="center" for="telefono">Teléfono:</label>
-                        <input type="tel" />
+                        <input type="tel" name="telefono"/>
                     </div>
                     <div class="delivery">
                         <label for="entrega">Retiro en tienda</label>
@@ -63,46 +64,44 @@
                 <div class="amounts">
                     <div>
                         <label for="productos">Alfajor de dulce de leche bañado en chocolate</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_dlc_ch">
                     </div>
                     <div>
                         <label for="productos">Alfajor de dulce de leche bañado en chocolate blanco</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_dlc_bl">
                     </div>
                     <div>
                         <label for="productos">Alfajor de fruta bañado en chocolate</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_frt_ch">
                     </div>
                     <div>
                         <label for="productos">Alfajor de fruta bañado en chocolate blanco</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_frt_bl">
                     </div>
                     <div>
                         <label for="productos">Alfajor de dulce de leche bañado en chocolate 70% cacao</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_dlc_70">
                     </div>
                     <div>
                         <label for="productos">Alfajor de almendras bañado en chocolate</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_alm_ch">
                     </div>
                     <div>
                         <label for="productos">Alfajor de nueces bañado en chocolate blanco</label>
-                        <input type="number">
+                        <input type="number" name="alfajor_nue_bl">
                     </div>
                     <div>
                         <label for="productos">Conito de dulce de leche bañado en chocolate</label>
-                        <input type="number">
+                        <input type="number" name="conito_dlc_ch">
                     </div>
                 </div>
-                <div class="comments">
-                    <label for="aclaraciones">No soy un robot</label>
-                    <span id="captcha-txt" class="captcha"></span>
-                    <input id="captcha" name="captcha" type="text"/>
-                    <span id="captcha-msg" class="captcha-msg"></span>
+                <div class="captcha">
+                    <label for="captcha">No soy un robot</label>
+                    <span id="captcha-txt" class="captcha-txt"></span>
+                    <input id="captcha" type="text" name="captcha" />
+                    <span id="captcha-msg"></span>
                 </div>
-                <div>
-                    <button id="submit-btn" type="button">Enviar</button>
-                </div> 
+                <button id="submit-btn" type="button">Enviar</button>
             </form>
         </div>
     </div>
