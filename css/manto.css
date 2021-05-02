@@ -126,11 +126,12 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 2.5% 5%;
+    margin: 3% 3%;
+    padding: 2%;
     width: 40%;
     align-items: center;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: #272727;
     color: #FFFFFF;
 }
