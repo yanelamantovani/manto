@@ -93,9 +93,8 @@ a {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     letter-spacing: 1.2px;
+    overflow: scroll;
 }
 
 .content table {
@@ -117,11 +116,63 @@ a {
     border-right: 0;
 }
 
+.content ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.content li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 2.5% 5%;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #272727;
+    color: #FFFFFF;
+}
+
+.content h3 {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.content li h4 {
+    font-size: 2em;
+    width: 100%;
+    color: #FFCC00;
+    margin: 0.5em 0;
+}
+
+.content li img {
+    width: 60%;
+    align-items: center;
+    height: auto;
+}
+
+.content li p {
+    width: 80%;
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em 3em 3em;
+}
+
 .rounded {
     border-radius: 25px;
     background-color: #272727;
     color: #FFFFFF;
     padding: 3em;
+    margin-top: 1em;
 }
 
 .rounded form {
