@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="css/manto.css">
     <script type="text/javascript" src="js/topnav.js"></script>
     <script type="text/javascript" src="js/model.js"></script>
-    <script type="text/javascript" src="js/cart.js"></script>
-    <script type="text/javascript" src="js/captcha.js"></script>
+    <script type="text/javascript" src="js/orders.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -37,30 +36,31 @@
     </nav>
     <!-- Contenido -->    
     <article class="content">
-        <h3>Pedidos</h3>
+        <h3 id="topHeader">Hacer un pedido nuevo</h3>
         <div class="form rounded">
             <form id="form" action="pedidos.html" method="post">
                 <div class="info">
-                    <label for="nombre">Nombre:</label>
-                    <input id="nombre" type="text" name="nombre" required />
-                    <label class="center" for="apellido">Apellido:</label>
-                    <input id="apellido" type="text" name="apellido" required/>
+                    <input type="hidden" id="id" name="id" />
+                    <label for="fname">Nombre:</label>
+                    <input id="fname" type="text" name="fname" required />
+                    <label class="center" for="lname">Apellido:</label>
+                    <input id="lname" type="text" name="lname" required/>
                 </div>
                 <div class="info">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" required/>
-                    <label class="center" for="telefono">Teléfono:</label>
-                    <input type="tel" name="telefono" required/>
+                    <input id="email" type="email" name="email" required/>
+                    <label class="center" for="phone">Teléfono:</label>
+                    <input id="phone" type="tel" name="phone" required/>
                 </div>
                 <div class="info delivery">
                     <label for="retiroTienda">Retiro en tienda</label>
-                    <input id="retiroTienda" type="radio" name="entrega" checked/>
+                    <input id="retiroTienda" type="radio" name="type" value="Retiro en tienda" checked/>
                     <label class="center" for="entregaDomicilio">Envío a domicilio</label>
-                    <input id="entregaDomicilio" type="radio" name="entrega" />
+                    <input id="entregaDomicilio" type="radio" name="type" value="Entrega a domicilio" />
                 </div>
                 <div class="info hidden">
-                    <label for="direccion">Dirección:</label>
-                    <input id="direccion" type="text" class="address" name="direccion"/>
+                    <label for="address">Dirección:</label>
+                    <input id="address" type="text" class="address" name="address"/>
                 </div>
                 <div class="info">
                     <label for="productType">Producto:</label>
@@ -104,6 +104,32 @@
                 </div>
             </form>
         </div>
+        <section id="myOrders" class="myOrders">
+            <h3>Mis pedidos</h3>
+            <select id="searchBy">
+                <option value="id">ID</option>
+                <option value="fname">Nombre</option>
+                <option value="lname">Apellido</option>
+                <option value="address">Dirección</option>
+                <option value="phone">Teléfono</option>
+            </select>
+            <input id="searchValue" type="text" >
+            <button id="search">Buscar</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Datos Personales</th>
+                        <th>Items</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody id="orders">
+
+                </tbody>
+            </table>
+        </section>
+        <span id="anchor"></span>
     </article>
     <!-- Footer -->
     <footer>

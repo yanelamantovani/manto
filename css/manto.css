@@ -360,6 +360,19 @@ figure.content {
     display: none; 
 }
 
+.myOrders {
+    margin-bottom: 1em;
+}
+
+.myOrders table td, .myOrders table th {
+    padding: 1em 0.5em 1em 0.5em;
+}
+
+.content .myOrders table td:last-child, .content .myOrders table th:last-child, .myOrders table td .fa {
+    padding: 0;
+    border: none;
+}
+
 @media only screen and (min-width: 480px)  {
     
     html {
