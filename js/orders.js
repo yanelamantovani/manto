@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", function(event) {
+function initOrders() {
 
     const BASE_URL = "https://60cbd3ec21337e0017e45771.mockapi.io/orders";
     const RETIRO_EN_TIENDA = "Retiro en tienda";
@@ -452,4 +452,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
         showCart();
     }    
 
-});
+}
