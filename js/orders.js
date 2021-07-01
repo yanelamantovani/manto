@@ -5,7 +5,7 @@ function initOrders() {
     const RETIRO_EN_TIENDA = "Retiro en tienda";
     const INVALID_CAPTCHA = "Captcha inválido";
     const CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-    const CAPTCHA_LENGTH = 1;
+    const CAPTCHA_LENGTH = 5;
 
     // Creamos el carrito con su contenido inicial.
     let cart = [];
