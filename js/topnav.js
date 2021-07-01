@@ -1,6 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function(event) {
-    
+
     loadContent("portada");
 
     /**
@@ -45,19 +45,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log("El id clickeado es " + id);
         selectTab(id);
         loadContent(id);
-        let page = id != "portada" ? id : "index";
         // Pushea el estado y agrega el id a la URL
-        window.history.pushState({ page }, `${page}`, `/${page}.html`);
+        window.history.pushState({ id }, `${id}`, `/${id}.html`);
     }
 
     /**
      * Al cargar la página agrega un evento push a cada link del nav
      */
-    window.onload = (event) => {
-        window["portada"].addEventListener("click", (event) => push(event));
-        window["pedidos"].addEventListener("click", (event) => push(event));
-        window["productos"].addEventListener("click", (event) => push(event));
-    }
+    window.addEventListener("load", function(event) {
+        document.querySelector("#portada").addEventListener("click", (event) => push(event));
+        document.querySelector("#productos").addEventListener("click", (event) => push(event));
+        document.querySelector("#pedidos").addEventListener("click", (event) => push(event));
+    })
 
     /**
      * Agrega un evento PopState (cuando se clickearon los botones atrás/adelante)
@@ -65,14 +64,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
      window.addEventListener("popstate", (event) => {
         // Guarda el id del estado anterior
         console.log(event);
-        
-            let stateId = event.state.page;
-            console.log("stateId = ", stateId);
-            
-            //let page = stateId != "index" ? stateId : "portada";
-            
-            selectTab(stateId);
-            loadContent(stateId);
-        
+        let stateId = event.state.id;
+        console.log("stateId = ", stateId);
+        selectTab(stateId);
+        loadContent(stateId);
     });
 });
