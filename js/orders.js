@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 console.log(`Order #${id} deleted.`)
                 let json = await response.json();
                 console.log(json);
-                getOrders(true);
+                getOrders(false);
             } else {
                 console.log("Status de respuesta inválido");    
             }
@@ -168,40 +168,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * Busca los pedidos y los muestra en la tabla de pedidos.
      */
     async function getOrders(scroll) {
-        console.log(`Loading orders.`);
-        try {
-            let ordersView = document.querySelector("#orders");
-            ordersView.innerHTML = `<tr>
-                                        <td colspan="4">Loading orders...</td>
-                                    </tr>`;
-            const response = await fetch(BASE_URL);
-            if (response.ok) {
-                let orders = await response.json();
-                showOrders(orders);
-                if (scroll) {
-                    document.querySelector("#anchor").scrollIntoView();
-                }
-            } else {
-                console.log("Status de respuesta inválido");
-            }
-        } catch(e) {
-            console.log(e);
-        }
+        console.log(`Loading orders for scroll=${scroll}.`);
+        fetchOrders(null, null, null, null, scroll);
     }
 
     /**
-     * Busca los pedidos y los muestra en la tabla de pedidos.
+     * Clickear Buscar pedidos, los busca y muestra el resultado en la table de pedidos.
      */
     document.querySelector("#search").addEventListener("click", async function () {
         let searchBy = document.querySelector("#searchBy").value;
         let searchValue = document.querySelector("#searchValue").value;
-        console.log(`Loading orders.`);
+        console.log(`Searching orders searchBy=${searchBy}, searchValue=${searchValue}.`);
+        fetchOrders(searchBy, searchValue, null, null, false);
+    });
+
+    /**
+     * Clickear Buscar pedidos, los busca y muestra el resultado en la table de pedidos.
+     */
+    document.querySelector("#paginate").addEventListener("click", async function () {
+        let page = document.querySelector("#pageNumber").value;
+        let limit = document.querySelector("#pageLimit").value;
+        if (limit !== "ALL") {
+            console.log(`Paginating orders page=${page}, limit=${limit}.`);
+            fetchOrders(null, null, page, limit, false);
+        } else {
+            console.log(`Loading all orders.`);
+            fetchOrders(null, null, null, null, false);
+        }
+        
+    });
+
+    /**
+     * Returno la url para hacer un get
+     */
+    async function fetchOrders(searchBy, searchValue, page, limit, scroll) {
+        console.log(`Fetching orders searchBy=${searchBy},searchValue=${searchValue},page=${page},limit=${limit},scroll=${scroll}.`);
         try {
             let ordersView = document.querySelector("#orders");
             ordersView.innerHTML = `<tr>
                                         <td colspan="4">Loading orders...</td>
                                     </tr>`;
-            const response = await fetch(`${BASE_URL}?${searchBy}=${searchValue}`);
+            const response = await fetch(getUrl(searchBy, searchValue, page, limit));
             if (response.ok) {
                 let orders = await response.json();
                 showOrders(orders);
@@ -213,8 +220,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         } catch(e) {
             console.log(e);
+        }    
+    }
+
+    /**
+     * Returno la url para hacer un get
+     */
+    function getUrl(searchBy, searchValue, page, limit) {
+        let url = BASE_URL;
+        if (searchBy && searchValue || page && limit) {
+            url += `?`;
+            if (searchBy && searchValue) {
+                url += `${searchBy}=${searchValue}&`
+            }
+            if (page && limit) {
+                url+=`page=${page}&limit=${limit}`;
+            }
         }
-    });
+        return url;
+    }
 
     /**
      * Muestra los pedidos.
@@ -222,7 +246,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function showOrders(orders) {
         let ordersView = document.querySelector("#orders");
         ordersView.innerHTML = "";
-        console.log(orders);
         for (let index = 0; index < orders.length; index++) {
             const order = orders[index];
             let html = `
