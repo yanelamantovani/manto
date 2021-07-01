@@ -104,8 +104,12 @@ footer {
     grid-area: footer;
 }
 
-.content {
+main {
     grid-area: content;
+}
+
+.content {
+    
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/manto.css">
     <script type="text/javascript" src="js/topnav.js"></script>
+    <script type="text/javascript" src="js/model.js"></script>
+    <script type="text/javascript" src="js/orders.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -20,22 +22,20 @@
         <h1>Manto</h1>
         <h2>de Saladillo a tu boca</h2>
         <!-- Top Nav -->
-        <div class="topnav" id="topNav">
+        <div class="topnav">
             <i class="fa fa-bars"></i>
         </div>
     </header>
     <!-- Nav -->
     <nav>
         <ul>
-            <li><a class="highlighted" href="index.html">Home</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a id="portada" class="route highlighted" href="index.html">Home</a></li>
+            <li><a id="productos" class="route" href="productos.html">Productos</a></li>
+            <li><a id="pedidos" class="route" href="pedidos.html">Pedidos</a></li>
         </ul>
     </nav>
-    <!-- Contenido -->    
-    <figure class="content">
-        <img src="images/manto_playa.jpg" alt="Alfajores">
-    </figure>
+    <!-- Contenido -->   
+    <main id="main"></main>
     <!-- Footer -->
     <footer>
         <!-- Redes -->
